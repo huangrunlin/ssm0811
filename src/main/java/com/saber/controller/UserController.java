@@ -31,6 +31,14 @@ public class UserController {
         return "redirect:/user/getAllUser";
     }
 
+    @RequestMapping("addUserTest")
+    public String addUserTest(Model model, User user){
+        if(user!=null){
+            userService.saveUser(user);
+        }
+        return "redirect:/user/getAllUserTest";
+    }
+
     @RequestMapping("getAllUser")
     public String getAllUser(Model model){
         List<User> user =userService.findAll();
